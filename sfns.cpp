@@ -3,6 +3,8 @@
 
 using namespace std;
 
+
+
 void display(int arr[9][9]) {
 
   for(int i = 0; i < 9; i++) {
@@ -73,13 +75,13 @@ bool inCol(int grid[9][9], int col, int num) {
 
 }
 
-bool inGrid(int grid[9][9], int srow, int scol, int num) {
+bool inGrid(int grid[9][9], int row, int col, int num) {
 
-  for(int row = 0; row < 3; row++) {
+  for(int row2 = 0; row2 < 3; row2++) {
 
-    for(int col = 0; col < 3; col++) {
+    for(int col2  = 0; col2 < 3; col2++) {
 
-      if(grid[row + srow][col + scol] == num) {
+      if(grid[row + row2][col + col2] == num) {
 
 	return true;
 
@@ -142,6 +144,8 @@ bool solve(int grid[9][9]) {
   
 
 }
+
+
 
  
 

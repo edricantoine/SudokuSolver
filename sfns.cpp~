@@ -1,7 +1,45 @@
 #include <iostream>
-#include <bits/stdc++.h>
+
 
 using namespace std;
+
+bool solve(int grid[9][9]) {
+
+  int row, col;
+
+  if(!findEmpty(grid, row, col)) {
+
+    return true;
+  }
+
+  for(int num = 1;  num <= 9; num++) {
+
+    if(isValid(grid, row, col, num)) {
+
+      grid[row][col] = num;
+
+      if(solve(grid)) {
+
+	return true;
+      } else {
+
+	grid[row][col] = 0;
+
+      }
+
+    }
+
+   
+
+  }
+
+  return false;
+
+  
+
+  
+
+}
 
 void display(int arr[9][9]) {
 
@@ -9,13 +47,17 @@ void display(int arr[9][9]) {
 
     for(int j = 0; j < 9; j++) {
 
-      cout << arr[row][col] << " ";
+      cout << arr[i][j] << " ";
 
     }
 
+    cout << endl;
+
+    
+
   }
 
-    cout << endl;
+    
 
 }
 
@@ -69,13 +111,13 @@ bool inCol(int grid[9][9], int col, int num) {
 
 }
 
-bool inGrid(int grid[9][9], int srow, int scol, int num) {
+bool inGrid(int grid[9][9], int row, int col, int num) {
 
-  for(int row = 0; row < 3; row++) {
+  for(int row2 = 0; row2 < 3; row2++) {
 
-    for(int col = 0; col < 3; col++) {
+    for(int col2  = 0; col2 < 3; col2++) {
 
-      if(grid[row + srow][col + scol] == num) {
+      if(grid[row + row2][col + col2] == num) {
 
 	return true;
 
@@ -100,6 +142,8 @@ bool isValid(int grid[9][9], int row, int col, int num) {
   return false;
 
 }
+
+
 
  
 
