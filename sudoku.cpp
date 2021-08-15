@@ -6,15 +6,27 @@ using namespace std;
 
 int main() {
 
-  int grid[9][9] = {{0, 8, 0, 3, 0, 0, 0, 2, 0},
-                    {0, 9, 6, 0, 7, 0, 0, 4, 0},
-		    {0, 0, 3, 0, 5, 0, 0, 9, 1},
-		    {6, 0, 0, 0, 0, 0, 0, 0, 3},
-		    {0, 3, 0, 0, 1, 5, 6, 0, 0},
-		    {0, 0, 0, 0, 0, 0, 2, 5, 4},
-		    {0, 0, 0, 0, 0, 2, 4, 0, 0},
-		    {3, 7, 0, 0, 0, 0, 0, 0, 0},
-		    {1, 0, 9, 7, 0, 0, 5, 0, 0}};
+  int grid[9][9];
+
+  int i;
+  int j;
+
+  for(i = 0; i < 9; i++) {
+    for(j = 0; j < 9; j++) {
+      int currentDigit;
+
+      cout << "Enter digit for row " + to_string(i) + ", column " + to_string(j) + ".\n";
+      cout << "Enter 0 for blank space.\n";
+      cin >> currentDigit;
+
+      grid[i][j] = currentDigit;
+
+     
+      
+    }
+  }
+
+ 
 		    
 
   if(solve(grid) == true) {
@@ -30,7 +42,7 @@ int main() {
 
   return 0;
 
-
+ 
 
 }
 
